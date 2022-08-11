@@ -1,0 +1,124 @@
+img {
+  display: block;
+  width: 100%;
+}
+
+.music {
+  max-width: 500px;
+  margin: auto;
+  border-radius: 15px;
+  background-color: #eee;
+  overflow: hidden;
+  padding: 15px;
+}
+
+.music .music-thumb {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 30px;
+}
+
+.music-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.is-playing {
+  animation: spinner 6s infinite linear;
+}
+
+.music-name {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.music-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 60px;
+}
+
+.play {
+  cursor: pointer;
+  position: relative;
+}
+
+.play::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: scale(1.4);
+  border-radius: 100%;
+  background-image: linear-gradient(
+    to right bottom,
+    #73d2f6,
+    #08c 22%,
+    #7fc400 36%,
+    #ffd583 48%,
+    #ffb21e 63%,
+    #ff4d4d 76%,
+    #503873
+  );
+}
+
+.play-inner {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 100%;
+  z-index: 10;
+  position: relative;
+}
+
+.play-back,
+.play-forward,
+.play-repeat,
+.play-infi {
+  cursor: pointer;
+}
+
+.range {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent;
+  margin-bottom: 25px;
+}
+
+.range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 3px;
+  background-color: #999;
+}
+
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  margin-top: -5px;
+  border-radius: 20px;
+  background: #20e3b2;
+  cursor: pointer;
+  box-shadow: 0 0 0 3px white, 0 0 0 7px rgba(100, 100, 111, 0.05);
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,47 @@
+.started {
+  max-width: 900px;
+  margin: 0 auto;
+  margin-bottom: 140px;
+  background-color: #fbfbfb;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+
+  *:not(img) {
+    position: relative;
+    z-index: 100;
+  }
+
+  &-desc {
+    color: $gray;
+    font-weight: 300;
+    margin: 30px auto 50px;
+    max-width: 245px;
+    line-height: 1.4;
+  }
+
+  &-comment {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+  }
+
+  &-smile {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+  }
+
+  @media screen and (max-width: 1279px) {
+    margin-bottom: 50px;
+    &-smile,
+    &-comment {
+      width: 20%;
+    }
+
+    &-smile {
+      transform: none;
+    }
+  }
+}

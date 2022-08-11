@@ -1,0 +1,124 @@
+.plan {
+  padding-bottom: 140px;
+
+  &-list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-label {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 15px;
+    background-color: $pink;
+    color: white;
+    text-transform: capitalize;
+    border-radius: 0 15px 0 15px;
+  }
+
+  &-item {
+    width: calc(100% / 3 - 30px);
+    border: 1px solid #eee;
+    border-radius: 15px;
+    padding: 75px 25px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: 0.5s;
+
+    &-btn {
+      margin: auto auto 0;
+      display: block;
+      width: max-content;
+    }
+
+    &:hover {
+      border-color: transparent;
+      box-shadow: 0 0 50px 10px rgba(black, 0.05);
+    }
+
+    &:hover &-btn {
+      background-color: $primary-color;
+      border-color: $primary-color;
+      color: white;
+    }
+  }
+
+  &-name {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 25px;
+  }
+
+  &-price {
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #eee;
+
+    sup {
+      vertical-align: top;
+    }
+  }
+
+  &-month {
+    font-size: 30px;
+  }
+
+  &-desc {
+    margin-bottom: 50px;
+    color: $gray;
+  }
+
+  &-feature {
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 30px;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      color: $gray;
+      font-weight: 300;
+
+      &:last-of-type {
+        margin-bottom: 50px;
+      }
+    }
+
+    &-icon {
+      font-size: 20px;
+      margin-right: 10px;
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    padding-bottom: 50px;
+
+    &-item {
+      width: calc(100% / 3 - 20px);
+      padding-bottom: 30px;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    &-list {
+      display: grid;
+      grid-auto-columns: 300px;
+      grid-auto-flow: column;
+      grid-gap: 0 30px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+    }
+
+    &-item {
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
+}

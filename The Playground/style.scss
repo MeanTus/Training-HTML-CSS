@@ -1,0 +1,647 @@
+// ----- Các mã màu -----
+$primary-color: #ffc87a;
+$text-color: #1a2b5f;
+$text-gray: #c6cad7;
+// ----------------------
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Dongle", sans-serif;
+  color: $text-color;
+  line-height: 1;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+// ------ Phần mixin -------
+@mixin flex(
+  $align: flex-start,
+  $justify: flex-start,
+  $wrap: nowrap,
+  $dir: row
+) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-wrap: $wrap;
+  flex-direction: $dir;
+}
+
+@mixin sizeImg($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+// -------------------------
+
+// Text clamp
+.text-clamp {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+
+  &--2 {
+    -webkit-line-clamp: 2;
+  }
+}
+// ------------------------------
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 1210px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.header {
+  padding-top: 4rem;
+
+  &__inner {
+    @include flex(center, space-between);
+
+    // Ẩn icons khi màn hình desktop
+    .fas {
+      display: none;
+    }
+  }
+
+  &__menu {
+    &-list {
+      @include flex(center);
+    }
+
+    &-item {
+      margin-left: 5rem;
+      &:last-child {
+        margin-left: 7rem;
+      }
+    }
+
+    &-link {
+      color: $text-color;
+      font-size: 2rem;
+      transition: 0.6s;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $text-color;
+
+  &__text {
+    color: $primary-color;
+  }
+}
+
+.banner {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  max-width: 80rem;
+  margin: 0 auto;
+  text-align: center;
+
+  &__heading {
+    font-size: 6rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  &__desc {
+    font-weight: 300;
+    font-size: 1.6rem;
+    margin-bottom: 4rem;
+  }
+
+  &__btn {
+    @include flex(stretch, center);
+    .btn {
+      margin: 0 1rem;
+    }
+  }
+}
+
+.btn {
+  cursor: pointer;
+  color: $text-color;
+  outline: none;
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 1rem 3rem;
+  display: inline-block;
+  border: 0;
+  background-color: transparent;
+
+  &--border {
+    border: 1px solid;
+  }
+
+  &--round {
+    border-radius: 5rem;
+  }
+
+  &--primary {
+    background-color: $primary-color;
+  }
+}
+
+// Category -------------------
+.category {
+  &__list {
+    @include flex(stretch, space-between, wrap);
+  }
+
+  &__item {
+    @include flex(stretch, flex-start, nowrap, column);
+    width: calc(25% - 22.5px);
+    padding: 2.5rem;
+    border-radius: 20px;
+    background-color: #f3f3f3;
+  }
+
+  &__img {
+    border-radius: inherit;
+    object-fit: cover;
+    margin-bottom: 4rem;
+    @include sizeImg(100%, 23rem);
+  }
+
+  &__name {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__details {
+    color: $text-gray;
+    font-size: 1.6rem;
+    margin-top: auto;
+
+    i {
+      margin-left: 1.5rem;
+    }
+  }
+}
+// ---------------------------
+
+// Feature -------------------
+.feature {
+  padding-top: 15rem;
+
+  &__item {
+    @include flex(center);
+    margin-bottom: 15rem;
+
+    &:nth-child(odd) {
+      .feature__info {
+        padding-left: 10rem;
+      }
+    }
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+
+      .feature__info {
+        padding-right: 10rem;
+      }
+    }
+  }
+
+  &__img,
+  &__info {
+    width: 50%;
+  }
+
+  &__img {
+    width: 600px;
+    border-radius: 4rem;
+    overflow: hidden;
+  }
+
+  &__tittle {
+    font-size: 4rem;
+    font-weight: 700;
+    padding-bottom: 2rem;
+  }
+
+  &__desc {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+  }
+
+  &-intro {
+    margin-bottom: 2rem;
+
+    &__item {
+      font-weight: 700;
+      text-decoration: underline;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+
+      &--circle {
+        text-decoration: none;
+        position: relative;
+        padding-left: 1.5rem;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          width: 1rem;
+          height: 1rem;
+          border-radius: 1rem;
+          background-color: red;
+        }
+      }
+    }
+  }
+
+  &-best {
+    &__icon {
+      @include flex(center, center);
+      position: relative;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 4px;
+      font-size: 1.7rem;
+      margin-bottom: 1rem;
+      color: #ffa400;
+      z-index: 2;
+
+      &--purple {
+        color: purple;
+      }
+
+      &--green {
+        color: green;
+      }
+
+      &--blue {
+        color: blue;
+      }
+
+      &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: currentColor;
+        border-radius: inherit;
+        opacity: 0.25;
+        z-index: -1;
+      }
+    }
+
+    &__tittle {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    &__desc {
+      font-size: 1.6rem;
+      font-weight: 300;
+    }
+
+    &__list {
+      @include flex(stretch, space-between, wrap);
+    }
+
+    &__item {
+      width: calc(50% - 3rem);
+      margin-bottom: 5rem;
+    }
+  }
+}
+
+//  Partner
+.partner {
+  margin-bottom: 19rem;
+  &__container {
+    max-width: 83rem;
+    text-align: center;
+  }
+
+  &__tittle {
+    font-size: 3.5rem;
+    font-weight: 700;
+    padding-bottom: 7rem;
+    margin-bottom: 7rem;
+    border-bottom: 1px solid;
+  }
+
+  &__list {
+    @include flex(center, space-between);
+  }
+}
+
+// ---- Connect
+.connect {
+  text-align: center;
+  margin-bottom: 17rem;
+
+  &__tittle {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 3.5rem;
+  }
+
+  &__notice {
+    font-size: 2rem;
+    margin-bottom: 4rem;
+    span {
+      color: $primary-color;
+    }
+  }
+
+  &__list {
+    @include flex(stretch, space-between);
+  }
+
+  &__item {
+    width: calc(25% - 22.5px);
+  }
+}
+
+// Subscribe
+.subscribe {
+  margin-bottom: 5rem;
+
+  &__container {
+    @include flex(flex-start, space-between);
+    padding-bottom: 8rem;
+    border-bottom: 3px solid;
+  }
+
+  &__tittle,
+  &__info {
+    width: 50%;
+  }
+
+  &__tittle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    max-width: 43rem;
+  }
+
+  &__form {
+    @include flex(center, space-between);
+    background-color: #f2f1f6;
+    padding: 2rem;
+    margin-bottom: 3.5rem;
+  }
+
+  &__input {
+    border: 0;
+    outline: none;
+    background-color: transparent;
+    flex-grow: 1;
+  }
+
+  &__button {
+    cursor: pointer;
+    color: $text-color;
+    font-weight: 600;
+    border: 0;
+    outline: none;
+    background-color: transparent;
+  }
+
+  &__social i {
+    margin-left: 4rem;
+    font-size: 2.5rem;
+  }
+}
+
+// Footer
+.footer {
+  padding-bottom: 5rem;
+  &__container {
+    @include flex(flex-start, space-between);
+  }
+
+  &__item {
+    width: 25%;
+  }
+
+  &__link {
+    display: block;
+    width: fit-content;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+}
+
+// Responsive
+@media screen and (max-width: 1023px) {
+  .banner {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    &__desc {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .category {
+    &__item {
+      width: calc(50% - 22.5px);
+      margin-bottom: 2rem;
+    }
+  }
+
+  .feature {
+    padding-top: 5rem;
+    &__item {
+      flex-direction: column;
+      margin-bottom: 5rem;
+
+      &:nth-child(even) {
+        flex-direction: column;
+        .feature__info {
+          padding-right: 0;
+        }
+      }
+
+      &:nth-child(odd) {
+        .feature__info {
+          padding-left: 0;
+        }
+      }
+    }
+
+    &__img,
+    &__info {
+      width: 100%;
+    }
+
+    &__img {
+      max-width: 400px;
+      margin-bottom: 0.5rem;
+    }
+
+    &__desc {
+      font-size: 2.5rem;
+    }
+
+    &__tittle {
+      padding-bottom: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    position: relative;
+
+    // Hiển thị icons khi màn hình mobile
+    .fas {
+      display: inline;
+      font-size: 2.5rem;
+    }
+
+    &__menu {
+      position: fixed;
+      top: 0;
+      right: -200px;
+      width: 200px;
+      height: 100vh;
+      background-color: #ffa400;
+      transition: 0.6s;
+
+      &-list {
+        flex-direction: column;
+      }
+
+      &-item {
+        margin: 3rem 0;
+        font-size: 2rem;
+
+        &:last-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  .category {
+    &__item {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .partner {
+    margin-bottom: 5rem;
+    &__tittle {
+      padding-bottom: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    &__list {
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      width: 50%;
+      margin-bottom: 2.5rem;
+
+      img {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .connect {
+    margin-bottom: 5rem;
+
+    &__list {
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      width: calc(50% - 1rem);
+      margin-bottom: 2rem;
+    }
+  }
+
+  .subscribe {
+    &__container {
+      flex-direction: column;
+    }
+
+    &__tittle,
+    &__info {
+      width: 100%;
+    }
+
+    &__tittle {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .footer {
+    &__container {
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      width: 100%;
+      margin-bottom: 2rem;
+      text-align: center;
+
+      .logo {
+        font-size: 5rem;
+      }
+    }
+
+    &__link {
+      margin: 0 auto 1rem;
+      font-size: 3rem;
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .banner {
+    &__heading {
+      line-height: 0.7;
+    }
+  }
+}

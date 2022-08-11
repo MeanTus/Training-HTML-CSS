@@ -1,0 +1,41 @@
+.intro {
+  display: flex;
+  align-items: center;
+  margin: 110px 0 160px;
+
+  & > * {
+    width: 50%;
+  }
+
+  &-content {
+    padding-right: 130px;
+  }
+
+  &-desc {
+    margin: 40px 0;
+    line-height: 1.6;
+  }
+
+  @media screen and (max-width: 1023px) {
+    margin: 50px 0;
+  }
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+    margin: 30px 0;
+
+    & > * {
+      width: 100%;
+    }
+
+    &-content {
+      padding-right: 0px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    &-desc {
+      margin: 20px 0;
+    }
+  }
+}

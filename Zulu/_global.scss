@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #262e36;
+  line-height: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto !important;
+}
+
+// Button
+.btn {
+  display: inline-block;
+  color: $gray-dark;
+  padding: 22px 40px;
+  border-radius: 15px;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  transition: 0.5s;
+
+  &--primary {
+    color: white;
+    background-color: $primary-color;
+  }
+
+  &--border {
+    border: 1px solid;
+    color: $gray-blur;
+  }
+}
+
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 85px;
+
+  &-caption {
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+    padding: 0 10px;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 40px;
+      height: 2px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: $primary-color;
+    }
+
+    &::before {
+      left: 0;
+      transform: translateX(-40px);
+    }
+
+    &::after {
+      right: 0;
+      transform: translateX(40px);
+    }
+  }
+
+  &-caption--left {
+    padding-left: 50px;
+    &::after {
+      display: none;
+    }
+
+    &::before {
+      transform: none;
+    }
+  }
+
+  &-heading {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .btn {
+    padding: 10px 20px;
+  }
+
+  .block {
+    margin-bottom: 30px;
+
+    &-caption {
+      margin-bottom: 20px;
+    }
+
+    &-heading {
+      font-size: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .block {
+    &-heading {
+      font-size: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .btn {
+    padding: 5px 10px;
+  }
+}

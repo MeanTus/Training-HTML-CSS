@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP3 Player</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./app.css">
+    <script src="https://kit.fontawesome.com/018426c546.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="music">
+        <div class="music-thumb">
+            <img src="https://images.unsplash.com/photo-1644417076004-591270852df9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80" alt="img">
+        </div>
+        <h3 class="music-name">Beautiful</h3>
+        <input type="range" name="song" class="range">
+        <audio src="./music/holo.mp3" id="song"></audio>
+        <div class="music-time">
+            <div class="duration">2:10</div>
+            <div class="remaining">-1:20</div>
+        </div>
+        <div class="controls">
+            <i class="fa fa-infinity play-infi"></i>
+            <i class="fas fa-backward play-back"></i>
+            <div class="play">
+                <i class="fas fa-play play-inner"></i>
+            </div>
+            <i class="fas fa-forward play-forward"></i>
+            <i class="fa fa-repeat play-repeat"></i>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
