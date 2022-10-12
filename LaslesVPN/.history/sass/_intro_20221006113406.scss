@@ -1,0 +1,29 @@
+.intro {
+  padding-top: 100px;
+  &-container {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 37px 90px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    box-shadow: 50px 100px 0 0 red;
+  }
+
+  &-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 36.5px;
+    font-style: 20px;
+  }
+
+  &-title {
+    font-weight: 700;
+    font-style: 25px;
+  }
+
+  &-img {
+    width: 55px;
+    height: 55px;
+  }
+}

@@ -1,0 +1,51 @@
+.header {
+  padding-top: 50px;
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-auth {
+    display: flex;
+    align-items: center;
+    gap: 0 30px;
+    text-transform: capitalize;
+  }
+
+  &-signin {
+    font-weight: 500;
+    color: $heading-color;
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 0 40px;
+
+  &-link {
+    color: inherit;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .menu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 779px) {
+  .header {
+    padding-top: 10px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .header {
+    &-auth {
+      gap: 0 10px;
+      font-size: 13px;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.subscribe {
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 70px;
+    background-color: white;
+    border-radius: 10px;
+  }
+
+  &-content {
+    max-width: 410px;
+  }
+
+  .button {
+    z-index: 10;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (min-width: 1270px) {
+  .subscribe {
+    transform: translateY(50%);
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .subscribe-container {
+    flex-direction: column;
+    padding: 30px 35px;
+    gap: 20px 0;
+    text-align: center;
+  }
+}

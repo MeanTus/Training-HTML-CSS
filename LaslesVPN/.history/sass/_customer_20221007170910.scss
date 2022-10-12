@@ -1,0 +1,17 @@
+.customer {
+  padding-top: 65px;
+
+  .boxed {
+    margin-bottom: 60px;
+  }
+  .heading {
+    max-width: 448px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &-item {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

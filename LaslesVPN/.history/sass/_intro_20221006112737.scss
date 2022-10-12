@@ -1,0 +1,20 @@
+.intro {
+  padding-top: 100px;
+  &-container {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 37px 90px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  &-item {
+    display: flex;
+    justify-content: center;
+  }
+
+  &-img {
+    width: 55px;
+    height: 55px;
+  }
+}

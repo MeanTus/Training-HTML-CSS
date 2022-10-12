@@ -1,0 +1,25 @@
+.partner {
+  &-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 0 60px;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .partner {
+    &-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      grid-template-columns: none;
+      gap: 10px 20px;
+    }
+
+    &-item {
+      width: calc((100% / 3) - 20px);
+    }
+  }
+}

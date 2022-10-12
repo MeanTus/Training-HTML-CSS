@@ -1,0 +1,23 @@
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+body {
+  font-family: $font;
+  line-height: 1;
+  color: $text-color;
+  font-weight: 400;
+}
+
+.button {
+  display: inline-block;
+  padding: 13px 45px;
+  cursor: pointer;
+  border-radius: 100rem;
+}

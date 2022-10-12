@@ -1,0 +1,30 @@
+.footer {
+  background-color: #f8f8f8;
+  &-container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .logo {
+    margin-bottom: 20px;
+  }
+  &-social {
+    display: flex;
+    gap: 0 20px;
+    .social-item {
+      display: flex;
+      align-items: center;
+    }
+
+    img,
+    a {
+      width: 34px;
+      height: 35px;
+    }
+
+    a {
+      background-color: $primary-color;
+      border-radius: 100rem;
+    }
+  }
+}

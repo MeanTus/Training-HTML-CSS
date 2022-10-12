@@ -1,0 +1,13 @@
+.subscribe {
+  padding-top: 50px;
+
+  &-container {
+    padding: 60px 70px;
+    background-color: white;
+    border-radius: 10px;
+  }
+
+  &-content {
+    max-width: 410px;
+  }
+}

@@ -1,0 +1,15 @@
+.network {
+  padding-top: 150px;
+  padding-bottom: 30px;
+
+  .boxed {
+    margin-bottom: 155px;
+    .heading {
+      max-width: 380px;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media screen and (max-width: 1269px) {
+}

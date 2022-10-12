@@ -1,0 +1,30 @@
+.hero {
+  padding-top: 90px;
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 40px;
+  }
+
+  &-content {
+    width: 100%;
+    max-width: 555px;
+  }
+
+  &-heading {
+    font-size: 50px;
+    line-height: 70px;
+    color: $heading-color;
+    margin-bottom: 20px;
+    strong {
+      font-weight: 700;
+    }
+  }
+
+  &-desc {
+    line-height: 30px;
+    margin-bottom: 50px;
+  }
+}

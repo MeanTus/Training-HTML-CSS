@@ -1,0 +1,31 @@
+.feature {
+  padding-top: 95px;
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 0 170px;
+  }
+
+  &-img {
+    min-width: 508px;
+  }
+
+  &-desc {
+    margin-bottom: 20px;
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  .feature {
+  }
+}

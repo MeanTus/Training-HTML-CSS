@@ -1,0 +1,13 @@
+.network {
+  padding-top: 150px;
+
+  &-header {
+    max-width: 555px;
+    text-align: center;
+    margin: 0 auto 155px;
+
+    .heading {
+      max-width: 380px;
+    }
+  }
+}

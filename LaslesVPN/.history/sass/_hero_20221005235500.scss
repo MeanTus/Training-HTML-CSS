@@ -1,0 +1,24 @@
+.hero {
+  padding-top: 90px;
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 40px;
+  }
+
+  &-content {
+    width: 100%;
+    max-width: 555px;
+  }
+
+  &-heading {
+    font-size: 50px;
+    line-height: 70px;
+  }
+
+  &-img {
+    flex-shrink: 0;
+  }
+}

@@ -1,0 +1,23 @@
+.feature {
+  padding-top: 95px;
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 0 170px;
+  }
+
+  &-img {
+    min-width: 508px;
+  }
+
+  &-desc {
+    margin-bottom: 20px;
+  }
+
+  &-desc {
+    display: flex;
+    align-items: center;
+  }
+}
